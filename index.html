@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makedata</title>
+
+
+        <!-- FontAwesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+   
+        <!-- slick 이미지 슬라이드 : 라이브러리 사용 slick.css 파일 -->
+        <!-- slick css CDN -->
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+        
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/acordi.css">
+    
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!-- slick js 이미지 슬라이드 -->
+        <script src="js/slick.min.js"></script>
+    
+        <script src="js/script.js"></script>
+        <script src="js/acor.js"></script>
+
+        <script>
+            let best = document.getElementById('slide01');
+            function mouseover (){
+            best.setAttribute("src","img/slide06.jpg");
+        }
+        
+        function mouseleave (){
+            best.setAttribute("src","img/slide01.jpg");
+        } 
+
+        </script>
+        <style>
+            .box {
+                width: 250px;
+                height: 200px;
+            }
+        </style>
+</head>
+<body>
+        <!-- 메뉴 열기 버튼 -->
+        <span id="btn-menu" class="btn-menu">
+            <i class="fa fa-bars"></i>
+        </span>
+    
+        <!-- ########## header ########## -->
+       
+        <header>
+            <!-- 메뉴 닫기 버튼 -->
+            <span id="btn-close" class="btn-menu">
+                <i class="fa fa-times"></i>
+            </span>
+    
+            <a href="#" class="logo">
+                <span>Makedata</span>
+
+                <div class="main-logo"><img src="img/logo-01.png" alt="make"></div>
+                
+           </a>
+    
+        <!-- 메뉴 -->
+        <nav class="navbar">
+            <div id="Accordion_wrap"></div>
+            <div class="que">
+                <span>AI Project</span>
+                <span><a href="#Find">도서관 찾기</a></span>
+                <a href="#chatbot">Chatbot</a>
+                <a href="#AIProject">Image make</a>
+                 <div class="arrow-wrap">
+                   <span class="arrow-top">+</span>
+                  <span class="arrow-bottom">-</span>
+                 </div>
+
+            <!-- <a href="#Find">도서관 찾기</a>
+            <a href="#chatbot">Chatbot</a>
+            <a href="#AIProject">Image make</a> -->
+        </nav>
+    </header>
+        <!-- ########## 입력 창 ########## -->
+    <section class="Find" id="Find">
+    
+        <!-- index.html 가져오기 -->
+        <!-- 전체 영역 -->
+    <div class="container">
+        <!-- 입력 영역 -->
+        <form action="" method="post">
+            <!-- 입력 박스 -->
+            <div class="title-wrap">
+                <!-- 중첩 박스 (inner)-->
+                <div id="title">
+            
+                    <!-- 아이디-->
+                    <div class="title-inputbox">
+                        <p>Start with a detailed description</p>
+                        <input type="text" name="id" placeholder="입력하세요...">
+                        <div class="title-btnbox"><a href="#" class="title-btn">Make a sample</a></div><br>
+                                               
+                        <span class="border"></span>
+                        <div class="title-btnbox"><a href="#" class="title-btn">Create</a></div><br>
+                        <span class="border"></span>
+                 
+                        <p align = "center">Or, Uproad File</p>
+                        <div class="slide"><img src="img/m1.png" alt="" style="width:10%;height:auto" width="100" height="100" ></div><br>
+                        <div class="title-btnbox"><a href="#" class="title-btn">Buy-cash</a></div><br>
+                    </div>
+                </form>
+                    <br>
+         <!-- onmouseover  -->
+                <!-- <div class="box" onmouseover="mouseover()" onmouseleave="mouseleave()">
+                    <img src="img/best1.jpg" id="best1"> //이미지 경로 입력
+                     </div>
+
+                     <div class="text_photo"> 
+                <p id = 'explain'>2015 자전거 전국여행</p> 
+                <img src="travel image\2015 자전거여행\11248890_1676844092550634_791926986_n.jpg" alt="">
+             -->
+            </section>
+
+
+            <section class="chatbot" id="chatbot">
+                <div class="chat-container">
+                    <img src="img/h1.jpg" alt="" class="image">
+                        <div class="textbox"><div class="text">Chatbot : Health Care</div>
+                    </div>
+                </div>
+
+            </section>
+
+        <!-- project img -->
+            <section class="AIProject" id="AIProject">
+                <h2>Project</h2>
+                    <div class="slide-container">
+                   
+                        <div class="slide"><img src="img/slide01.jpg" alt="">
+                            <h3> Chatbot <span> Health</span> Care</h3>
+                            </div>
+                            
+                        <div class="slide"><img src="img/slide02.jpg" alt=""></div>
+                        <div class="slide"><img src="img/slide03.jpg" alt=""></div>
+                        <div class="slide"><img src="img/slide04.jpg" alt=""></div>
+                        <div class="slide"><img src="img/slide05.jpg" alt=""></div>
+            
+                    </div>               
+            
+                  
+            </section>
+                    
+            </div>
+            </div>      
+    </div>    
+
+           <!--카피라이트-->
+           <div class="copy">
+            
+            <p>copyright&copy: 2023 Human Edu. All right reserved.</p>
+        </div> 
+    </section>
+    
+    <!-- ########## 입력 창 ########## -->
+ 
+</body>
+</html>
