@@ -2,8 +2,8 @@
   box-sizing: border-box; 
 }
   
-.que:first-child{
-    border-top: 1px solid black;
+.que:first-child{ /*메뉴 아래 회색 라인*/
+    border-top: 1px solid rgb(207, 193, 193);
   }
   
 .que{
@@ -11,8 +11,7 @@
   padding: 17px 0;
   cursor: pointer;
   font-size: 14px;
-  border-bottom: 1px solid #dddddd;
-  
+  border-bottom: 1px solid #dddddd;  
 }
   
 .que::before{

@@ -1,6 +1,6 @@
 
 :root {
-    --main-color:rgb(44, 3, 71);
+    --main-color:rgb(77, 16, 151);
     /* 지정할 속성에 var(--main-color)라고 쓰면 적용됨 */
 }
 
@@ -18,19 +18,19 @@ html {
 }
 
 body {
-    padding-left: 10rem;        /*  헤더의 크기만큼 띄어서 나온다. */
+    padding-left: 25rem;        /*  헤더의 크기만큼 띄어서 나온다. */
 }
 
-section {
+section {   
     min-height: 100vh;  /*  모니터 크기의 전체가 적용된다. 50:절반 */
     padding: 1rem 5%;
 }
-    /* 좌측 메뉴 makedata 영역 부분 */
+    /* 좌측 메뉴 my portpolio 영역 부분 */
 header {
     position: fixed;
     top: 0; left: 0; bottom: 0;
-    background-color: rgb(178, 144, 204);
-    width: 20rem;       /* body에  padding-left: 25rem;  준 값*/
+    background-color: rgb(208, 185, 227);
+    width: 25rem;       /* body에  padding-left: 25rem;  준 값*/
     display: flex;
     flex-direction: column; /* 가로 방향으로 변경함 */
     justify-content: space-between;
@@ -38,28 +38,47 @@ header {
     padding: 10rem 1rem;
     text-align: center;
 }
-/* makedata 글씨 */
+/* my portpolop 글씨 */
 header .logo {
-    color: rgb(84, 84, 85);
+    color: rgb(176, 161, 217);
     font-size: 2rem;
     font-weight: bold;
 }
 header .logo  span {
     color: var(--main-color);
 }
-header .navbar {}
+
+header .navbar {
+    position: relative;
+    padding: 17px 0;
+    cursor: pointer;
+    font-size: 14px;
+    border-bottom: 1px solid #dddddd;  
+  }
+header .navbar {
+    display: block;
+    color: rgb(93, 73, 165);
+    margin: 1.5rem 0;   /* navi 메뉴 글자간격*/
+    font-size: 1.7rem;
+}  
+
+
+  
+/*좌 네비게이션 세부메뉴*/
 header .navbar a {
     display: block;
-    color: rgb(218, 209, 254);
-    margin: 2rem 0;
-    font-size: 1.5rem;
+    color: rgb(150, 134, 207);
+    margin: 0.7rem 0;   /* navi 메뉴 글자간격*/
+    font-size: 1.1rem;
 }
 header .navbar a:hover {
     color: var(--main-color);
 }
+
+
 header .sns {}
 header .sns a {
-    color: rgb(143, 150, 156);
+    color: rgb(231, 241, 250);
     font-size: 1rem;
     margin: 50px 1rem;
 }
@@ -143,7 +162,7 @@ a {
 
 /* 아이디/비밀번호 입력 칸 크기 */
 #title .title-inputbox input{
-    width: 80%;
+    width: 70%;
     height: 32px;
     padding-left: 5px;
     font-size: 1rem;
@@ -232,13 +251,13 @@ a {
     radial-gradient(circle at 7% 75%, rgba(0,0,255, 0.5), rgba(255,0,0,0) 70%),
     radial-gradient(circle at 93% 75%, rgba(0,255,0, 0.5), rgba(255,0,0,0) 70%); */
     color: blanchedalmond;
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     color: rgb(133, 103, 146);
     margin-top: 10px;   /* 내가 추가함 */
-    line-height: 50px;    
+    line-height: 25px;    /* 버튼 안에서 글자 높이 */
     border-radius: 10px;
-    width: 180px;
-    height: 50px;
+    width: 120px;
+    height: 30px;
 }
 
 /* 로그인 박스 올렸을 때 버튼 색상 진해짐 */
@@ -261,6 +280,8 @@ a {
 }   
 /* ################ section login 끝 ############## */
 
+
+/* ################ section.profile ############## */
 
 /* ################ section.profile ############## */
 
@@ -319,25 +340,45 @@ a {
 
 /* ################ section.portpolio  ############## */
 /* 슬라이드 */
+/* 슬라이드 */
 .slide-container {
     width: 100%;
     height: 700px;
     margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
 }
 
-
-
-#slide_explain{
-    position: absolute; opacity: 0;
-}
-
-.slide:hover #explain{
-    opacity: 1;
+.slide-container .slide {
+    width: auto;
+    height: 700px;
+    padding: 20px 0;    /* 작은 이미지와 큰 이미지와 간격 */
+    box-sizing: border-box;
+    
 }
 
 .slide img { 
+    width: auto;
+    height: 30%;
+    
+}
+
+.slide-nav {    /* 하단 작은 슬라이드 영역 */
     width: 100%;
-    height: 100%;
+    height: 180px;
+    margin: 0 auto;
+}
+
+
+.slide-nav .slide { /* 하단 슬라이드 이미지 크기 */
+    width: auto;
+    height: 120px;
+    /* padding: 20px; */
+    box-sizing: border-box;
+}
+
+.slide-nav .slide:not(.slick-current) {
+    filter: brightness(40%);
 }
 
 

@@ -40,11 +40,39 @@
 
         </script>
         <style>
-            .box {
-                width: 250px;
-                height: 200px;
+
+            slide-container .text_box {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .5s ease;
+            background-color: rgb(0,140,186);
+            }
+
+            .slide-container:hover .text_box {
+            opacity: 0.7;
+            }
+
+            .textb {
+            color: white;
+            font-size: 25px;
+            font-family:verdana, sans-serif;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            text-align: center;
             }
         </style>
+
+        
 </head>
 <body>
         <!-- 메뉴 열기 버튼 -->
@@ -70,21 +98,24 @@
            
         <!-- 메뉴 -->
         <nav class="navbar">
-            <div id="Accordion_wrap"></div>
-            <div class="que">
+            <!-- <div id="Accordion_wrap"></div>
+            <div class="que"> 아코디언 메뉴 시도 실패-->
                 <span>AI Project</span>
-                <span><a href="#Findstudy">도서관 강좌 정보</a></span>
-                <a href="#Findbook">도서관 소장 정보</a>
-                <a href="#chatbot">Chatbot</a>
-                <a href="#AIProject">Image make</a>
-                 <div class="arrow-wrap">
-                   <span class="arrow-top">+</span>
-                  <span class="arrow-bottom">-</span>
-                 </div>
-
+                <!-- <div class="arrow-wrap">
+                    <span class="arrow-top">+</span>
+                   <span class="arrow-bottom">-</span>
+                </div> -->
+               
+                    <span><a href="#Find">도서관 강좌 정보</a></span>
+                    <a href="#Find">도서관 소장 정보</a>
+              
+                    <a href="#chatbot">Chatbot</a>
+                    <a href="#AIProject">Image make</a>
+               
         </nav>
     </header>
-        <!-- ########## 입력 창 ########## -->
+
+        <!-- ########## section 2 ########## -->
     <section class="Find" id="Find">
     
         <!-- index.html 가져오기 -->
@@ -125,10 +156,10 @@
             </section>
 
 
-            <section class="chatbot" id="chatbot">
-                <div class="chat-container">
-                    <img src="img/h1.jpg" alt="" class="image">
-                        <div class="textbox"><div class="text">Chatbot : Health Care</div>
+            <section class="chatbot" id="chatbot">                                  
+                       <div class="text"><h2>Chatbot : Health Care</h2></div>
+                       <div class="slide-container">  
+                        <img src="img/h1.jpg" alt="" class="image">
                     </div>
                 </div>
 
@@ -136,30 +167,25 @@
 
         <!-- project img -->
             <section class="AIProject" id="AIProject">
-                <h2>Project</h2>
-                    <div class="slide-container">
-                   
+                <h2>AI Project : Image make</h2>
+                    <div class="slide-container">                   
                         <div class="slide"><img src="img/slide01.jpg" alt="">
-                            <h3> Chatbot <span> Health</span> Care</h3>
-                            </div>
-                            
-                        <div class="slide"><img src="img/slide02.jpg" alt=""></div>
-                        <div class="slide"><img src="img/slide03.jpg" alt=""></div>
-                        <div class="slide"><img src="img/slide04.jpg" alt=""></div>
-                        <div class="slide"><img src="img/slide05.jpg" alt=""></div>
+                            <div class="text_box">
+                                <div class="textb">
+                                    <h1>Image make is variable effect for image makers </h1>
+                                </div>
+                        </div>                 
+                       
             
-                    </div>               
-            
+                    </div>                       
                   
-            </section>
-                    
+            </section>                   
             </div>
             </div>      
     </div>    
 
            <!--카피라이트-->
-           <div class="copy">
-            
+           <div class="copy">            
             <p>copyright&copy: 2023 Human Edu. All right reserved.</p>
         </div> 
     </section>
