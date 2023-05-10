@@ -28,54 +28,14 @@
         <!-- xhl js 파일 -->
         <script src="./js/libstudy.js"></script>
 
-        <script>
-            let best = document.getElementById('slide01');
-            function mouseover (){
-            best.setAttribute("src","img/slide06.jpg");
-        }
-        
-        function mouseleave (){
-            best.setAttribute("src","img/slide01.jpg");
-        } 
-
-        </script>
-        <style>
-
-            slide-container .text_box {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 100%;
-            width: 100%;
-            opacity: 0;
-            transition: .5s ease;
-            background-color: rgb(0,140,186);
-            }
-
-            .slide-container:hover .text_box {
-            opacity: 0.7;
-            }
-
-            .textb {
-            color: white;
-            font-size: 25px;
-            font-family:verdana, sans-serif;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            -webkit-transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-            text-align: center;
-            }
-        </style>
+    
+        <!-- chatimg -->
+ 
 
         
 </head>
 <body>
-        <!-- 메뉴 열기 버튼 -->
+        <!-- 좌측 상단 메뉴 열기 -->
         <span id="btn-menu" class="btn-menu">
             <i class="fa fa-bars"></i>
         </span>
@@ -92,15 +52,16 @@
                 <span>Makedata</span>
                 <br>
                 <br>
-                <div class="main-logo"><img src="img/logo-01.png" alt="make"></div>
-                
+                <br>
+                <div class="main-logo"><img src="img/logo-01.png" alt="make"></div>               
            </a>
            
         <!-- 메뉴 -->
         <nav class="navbar">
             <!-- <div id="Accordion_wrap"></div>
             <div class="que"> 아코디언 메뉴 시도 실패-->
-                <span>AI Project</span>
+                <!-- <span>AI Project</span> -->
+                               
                 <!-- <div class="arrow-wrap">
                     <span class="arrow-top">+</span>
                    <span class="arrow-bottom">-</span>
@@ -110,9 +71,20 @@
                     <a href="#Find">도서관 소장 정보</a>
               
                     <a href="#chatbot">Chatbot</a>
-                    <a href="#AIProject">Image make</a>
-               
-        </nav>
+                    <a href="#AIProject">Image make</a>                    
+                    <a href="https://iampro3-iris-streamlit-app-0331-w3thn9.streamlit.app/">Bidgata Analysis portpolio</a>
+                </nav>
+
+                      <!-- sns 버튼 -->
+         <div class="sns">
+           
+            <a href="https://twitter.com/i/flow/login" class="fab fa-twitter"></a>
+            <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
+            <a href="#Map">M</a>
+           
+        </div>
+                
+        
     </header>
 
         <!-- ########## section 2 ########## -->
@@ -130,20 +102,23 @@
             
                     <!-- 아이디-->
                     <div class="title-inputbox">
-                        <p>Start with a detailed description</p>
-                        <input type="text" name="id" placeholder="입력하세요...">
-                        <div class="title-btnbox"><a href="#" class="title-btn">Make a sample</a></div><br>
-                                               
-                        <span class="border"></span>
-                        <div class="title-btnbox"><a href="#" class="title-btn">Create</a></div><br>
-                        <span class="border"></span>
+                        <p>Start with a detailed description
+                            <div class="title-btnbox"><a href="#" class="title-btn">Make a sample</a></div></p>  
+                            <p>
+                                <input type="text" name="id" placeholder="입력하세요...">
+                                <div class="title-btnbox"><a href="#" class="title-btn">Create</a></div></p>                                         
+                    
+                        
+                        <!-- <span class="border"></span> -->
                  
-                        <p align = "center">Or, Uproad File</p>
-                        <div class="slide"><img src="img/m1.png" alt="" style="width:10%;height:auto" width="100" height="100"></div><br>
+                        <p align = "center">Or, Uproad File</p>                        
+                        <div class="slide"><img src="img/download.png" alt="" style="width: 50px; vertical-align: middle;"></div>
                         <div class="title-btnbox"><a href="#" class="title-btn">Buy-cash</a></div><br>
                     </div>
-                </form>
-                    <br>
+                </div>
+            </div>
+         </form>
+                  
          <!-- onmouseover  -->
                 <!-- <div class="box" onmouseover="mouseover()" onmouseleave="mouseleave()">
                     <img src="img/best1.jpg" id="best1"> //이미지 경로 입력
@@ -153,44 +128,102 @@
                 <p id = 'explain'>2015 자전거 전국여행</p> 
                 <img src="travel image\2015 자전거여행\11248890_1676844092550634_791926986_n.jpg" alt="">
              -->
-            </section>
-
-
-            <section class="chatbot" id="chatbot">                                  
-                       <div class="text"><h2>Chatbot : Health Care</h2></div>
-                       <div class="slide-container">  
-                        <img src="img/h1.jpg" alt="" class="image">
-                    </div>
-                </div>
-
-            </section>
-
-        <!-- project img -->
-            <section class="AIProject" id="AIProject">
-                <h2>AI Project : Image make</h2>
-                    <div class="slide-container">                   
-                        <div class="slide"><img src="img/slide01.jpg" alt="">
-                            <div class="text_box">
-                                <div class="textb">
-                                    <h1>Image make is variable effect for image makers </h1>
-                                </div>
-                        </div>                 
-                       
-            
-                    </div>                       
-                  
-            </section>                   
             </div>
-            </div>      
-    </div>    
+      
+            </section>
 
-           <!--카피라이트-->
-           <div class="copy">            
-            <p>copyright&copy: 2023 Human Edu. All right reserved.</p>
-        </div> 
-    </section>
-    
-    <!-- ########## 입력 창 ########## -->
- 
-</body>
+            <!-- section 2 챗봇 -->
+            <section class="chatbot" id="chatbot">   
+                <div class="slide-container">  
+                        
+                    <div class="slide">
+                        <div class="text">Chatbot : Health Counsel</div><br>
+                        <!-- <li class="text" style="background-image: url();">Chatbot</li><br> -->
+                           <ul>
+                            <li>
+                                <a href="#chatbot">
+                                    <figure>
+                                        <img src="img/h1.jpg" alt="">
+                                        <figcaption>: For you, health Counsel</figcaption>
+                                     </figure>                        
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#chatbot">
+                                    <figure>
+                                        <img src="img/h2.jpg" alt="">
+                                        <figcaption> : Health Care</figcaption>
+                                    </figure>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#chatbot" target="_self">
+                                    <figure>
+                                        <img src="img/h3.jpg" alt="">                   
+                                    <figcaption>: Healthy food</figcaption>
+                                    </figure>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#chatbot" target="_self">
+                                    <figure>
+                                        <img src="img/h4.jpg" alt="">                   
+                                    <figcaption>: Excercise</figcaption>
+                                    </figure>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#chatbot" target="_self">
+                                    <figure>
+                                        <img src="img/h5.jpg" alt="">                   
+                                    <figcaption>: health info</figcaption>
+                                    </figure>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#chatbot" target="_self">
+                                    <figure>
+                                        <img src="img/h6.jpg" alt="">                   
+                                    <figcaption>: Community</figcaption>
+                                    </figure>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                
+            </section>
+
+        <!-- section 3 image make -->
+        <section class="AIProject" id="AIProject">   
+            <div class="slide-container">  
+                   
+                <div class="slide">
+                    <div class="text">AI Project : Image make</div><br>
+                        <img src="img/slide01.jpg" alt="">
+<!--                         
+                        <div class="text_box">
+                            <div class="textb">
+                                <h1>Image make is variable effect for image makers </h1>
+                            </div> -->
+                      </div> 
+                </div>
+            </div>
+        </section>
+
+         <!-- section 4 map -->
+         <section class="Map" id="Map">   
+            <div class="slide-container">  
+                
+            </div>
+
+            <div id="title">
+                <!--카피라이트-->
+                  <div class="copy">            
+                      <p>Copyright&copy: 2023 AI Project JOE. All rights reserved.</p>    
+                      <br>
+                  </div>
+             </div>  
+        </section>
+                  
+    </body>
 </html>
