@@ -6,36 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Makedata</title>
 
-
         <!-- FontAwesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
    
         <!-- slick 이미지 슬라이드 : 라이브러리 사용 slick.css 파일 -->
         <!-- slick css CDN -->
-        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-        
-        <link rel="stylesheet" href="css/style.css">
-       
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">        
+        <link rel="stylesheet" href="css/style.css">       
     
         <!-- jQuery -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <!-- slick js 이미지 슬라이드 -->
         <script src="js/slick.min.js"></script>
     
-        <script src="js/script.js"></script>
-      
+        <script src="js/script.js"></script>     
         
         <!-- xhl js 파일 -->
         <script src="./js/libstudy.js"></script>       
-</head>
-<body>
+    </head>
+
+    <!-- login 버튼 누르면 이동 -->
+    <script>
+        function fnClick(){
+                let matchid = "${matchid}"  // if의 값을 선언해 주어야 한다.
+             if (matchid){            
+                alert("환영합니다.")
+                location.href = "index.html"
+             } else {
+                alert("id와 pw를 입력해주세요.")
+                location.href = "http://naver.com"
+            } 
+        }
+        </script>
+
+    <body>
         <!-- 좌측 상단 메뉴 열기 -->
         <span id="btn-menu" class="btn-menu">
             <i class="fa fa-bars"></i>
         </span>
     
-        <!-- ########## header ########## -->
-       
+        <!-- ########## header ########## -->       
         <header>
             <!-- 메뉴 닫기 버튼 -->
             <span id="btn-close" class="btn-menu">
@@ -49,44 +59,31 @@
                 <div class="main-logo"><img src="img/logo-01.png" alt="make"></div>               
            </a>
            
-        <!-- 메뉴 -->
+        <!-- 좌측 메뉴 -->
         <nav class="navbar">
-            <!-- <div id="Accordion_wrap"></div>
-            <div class="que"> 아코디언 메뉴 시도 실패-->
-                <!-- <span>AI Project</span> -->
-                               
-                <!-- <div class="arrow-wrap">
-                    <span class="arrow-top">+</span>
-                   <span class="arrow-bottom">-</span>
-                </div> -->
-               
-                    <span><a href="#Find">도서관 강좌 정보</a></span>
-                    <a href="#Find">도서관 소장 정보</a>
-              
-                    <a href="#chatbot">Chatbot</a>
-                    <a href="#AIProject">Image make</a>                    
-                    <a href="https://iampro3-iris-streamlit-app-0331-w3thn9.streamlit.app/" target="_blank">Bidgata Analysis portpolio</a>
-                </nav>
-                <br>
-                <br>
-                <a href="#login">Login</a>
-                <br>
-                      <!-- sns 버튼 -->
-         <div class="sns">
-           
+            <a href="#Find">도서관 강좌 정보</a>                
+            <a href="#Find">도서관 소장 정보</a>              
+            <a href="#chatbot">Chatbot</a>
+            <a href="#AIProject">Image make</a>                    
+            <a href="https://iampro3-iris-streamlit-app-0331-w3thn9.streamlit.app/" target="_blank">Bidgata Analysis portpolio</a>
+        </nav>
+            <br>
+            <br>
+            <a href="#login">Login</a>
+            <br>
+        <!-- sns 버튼 -->
+            <div class="sns">        
             <a href="https://twitter.com/i/flow/login" class="fab fa-twitter"></a>
             <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-            <a href="#Map">M</a>
-           
-        </div>
-                
-        
+            <a href="#Map">M</a>            
+            <a href="#field">Post</a>            
+        </div>            
     </header>
 
     <!-- ########## section 1 ########## -->
     <section class="Find" id="Find">             
             
-                <!-- <div class="text">도서관 강좌 정보</div><br> -->
+        <!-- <div class="text">도서관 강좌 정보</div><br> -->
             <!-- index.html 가져오기 -->
             <!-- 전체 영역 -->
         <div class="container">
@@ -100,16 +97,10 @@
                         <br>
                         <!-- 아이디-->
                         <div class="title-inputbox">
-                            <p>Start with a detailed description
-                                <div class="title-btnbox"><a href="#" class="title-btn">Make a sample</a></div></p>  
-                                <p>
-                                    <input type="text" name="id" placeholder="입력하세요...">
-                                    <div class="title-btnbox"><a href="#" class="title-btn">Create</a></div></p>    
-                            
-                            <!-- <span class="border"></span> -->                    
-                            <p align = "center">Or, Uproad File</p>                        
-                            <div class="slide"><img src="img/download.png" alt="" style="width: 50px; vertical-align: middle;"></div>
-                            <div class="title-btnbox"><a href="#" class="title-btn">Buy-cash</a></div><br>
+                            <p>Start with a detailed description</p><br>
+                                <input type="text" name="id" placeholder="입력하세요...">
+                                <div class="title-btnbox"><a href="#" class="title-btn">Make a sample</a></div>                        
+                                                                   
                         </div>
                     </div>
                 </div>
@@ -124,14 +115,17 @@
                 <div class="slide">
                     <div class="text">Chatbot : Health Counsel</div><br>
                     <!-- <li class="text" style="background-image: url();">Chatbot</li><br> -->
-                        <ul>
+                   
+                    <ul>
                         <li>
-                            <a href="#chatbot">
+                            <div id="btn4">
+                            <a href="#chatbot"> 
                                 <figure>
                                     <img src="img/h1.jpg" alt="">
                                     <figcaption>: For you, health Counsel</figcaption>
-                                    </figure>                        
+                                </figure>                        
                             </a>
+                        </div>
                         </li>
                         <li>
                             <a href="#chatbot">
@@ -172,14 +166,10 @@
                                 <figcaption>: Community</figcaption>
                                 </figure>
                             </a>
-                        </li>
-                        
-                    </ul>
-                    <br>                    
-                    <p>
-                        + If you want, you ask anything!</p><br>
+                        </li>  
+                    </ul>   
+                    <p>+ If you want to know about health, you ask anything!</p><br>
                 </div>
-               
             </div>
         </section>
 
@@ -191,12 +181,14 @@
                     <div class="text">AI Project : Image make</div><br>
                     <ul>
                         <li>
-                            <a href="imgmake.html" target="_top">
+                            <div id="btn3">
+                                <a href="#AIProject">
                                 <figure>
-                                    <img src="img/a1.jpg" alt="">
+                                    <img src="img/a1.jpg" alt="" style="width:360px;height:260px;">
                                     <figcaption>: Grafitti</figcaption>
-                                    </figure>                        
+                                </figure>                        
                             </a>
+                        </div>
                         </li>
                         <li>
                             <a href="#AIProject">
@@ -243,25 +235,8 @@
             </div>
         </section>
 
-        <!-- section 4 map -->
-        <section class="Map" id="Map">   
-            <br>
-            <div class="common-title">Map</div>
-            <br>
-            
-            <div class="margin-box">
-                <div id="map" style="width:100%;height:500px;"></div>
-                <div id="clickLatlng"></div>
-        </div>
-
-        <div class="place-info">
-            <div class="content">
-                <p class="hall">+ Email : star@gmail</h3>
-                <p class="address">+ 주소 : 서울특별시 영등포구 1000</p>
-            </div>         
-        </section>  
         
-        <!-- section 4 map -->
+        <!-- section 4 login -->
         <section class="login" id="login">   
             
             <!-- <div class="common-title">Login</div> -->
@@ -297,94 +272,266 @@
                                  <input type="checkbox" name="remember-me" id="remember-me">                    
                                 <span class="checkmark"> </span>    <!-- 체크모양을 만듦 -->
                                 <span>자동 로그인</span>
-                            </label>
-                        </div>
-              
+                            </label><br>
+                           
+                        </div>                                     
                             <!--버튼(로그인/회원가입)-->
-                            <div class="login-btnbox"><a href="#" class="login-btn">로그인</a></div>
-                            <div class="login-btnbox"><a href="#" class="login-btn">회원가입</a></div>
-                      </div>      
+                            <div class="login-btnbox"><a href="#" class="login-btn" onclick="fnClick()">로그인</a></div>
+                            <!-- <div id="btn2"> - ajax로 sign up 파일 불러오기  -->
+                            <div class="login-btnbox" id="btn2"><a href="#login" class="login-btn">회원가입</a></div>   
+                                                      
+                            <!-- ID/PW 찾기 -->
+                            <br>
+                                <div id="btn1" style="text-align: center;"><a href=#login class="login-btn">ID/PW 찾기</a>                                                
+                                </div>      
                     </div>   
-            </form>    
-        </div> 
-            <!--카피라이트-->
-                <div class="copy"> 
-                   
-                    <br>          
-                    <p>Copyright&copy: 2023 AI Project JOE. All rights reserved.</p>                        
-                </div>
-                <br> 
-            
+                </form>    
+            </div>                     
         </section>  
 
+        
+        <!-- section 5 map -->
+        <section class="Map" id="Map">   
+            <br>
+            <div class="common-title">Map</div>
+            <br>
+            
+            <div class="margin-box">
+                <div id="map" style="width:100%;height:500px;"></div>
+                <div id="clickLatlng"></div>
+            </div>
+
+        <div class="place-info">
+            <div class="content">
+                <p class="hall">+ Email : star@gmail</h3>
+                <p class="address">+ 주소 : 서울특별시 영등포구 1000</p>
+            </div>         
+        </section>  
+
+         <!-- section 6 게시판 -->
+        <section class="field", id="field">
+
+
+            <!--카피라이트-->
+            <div class="copy">                    
+                <br>          
+                <p>Copyright&copy: 2023 AI Project JOE. All rights reserved.</p>                        
+            </div>
+            <br>  
+        </section>
+
         <!-- map api -->
-         <!-- <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4d9c4ccd55af22e749af292453ba1fa9"></script> -->
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9d5f77b3d4cfcb354c55ca6b62645ca4"></script>
-    <script>
-        // 카카오 지도 API 기능 구현하기 
+        <!-- <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4d9c4ccd55af22e749af292453ba1fa9"></script> -->
+        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9d5f77b3d4cfcb354c55ca6b62645ca4"></script>
+        <script>
+            // 카카오 지도 API 기능 구현하기 
 
-		var lat = 37.51826573899883		// 위도 
-		var lon = 126.90642947856348
+            var lat = 37.51826573899883		// 위도 
+            var lon = 126.90642947856348
 
-		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-		    mapOption = {
-		        center: new kakao.maps.LatLng(lat, lon), // 지도의 중심좌표
-		        level: 4, // 지도의 확대 레벨
-		        mapTypeId : kakao.maps.MapTypeId.ROADMAP // 지도종류
-		    }; 
+            var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+                mapOption = {
+                    center: new kakao.maps.LatLng(lat, lon), // 지도의 중심좌표
+                    level: 4, // 지도의 확대 레벨
+                    mapTypeId : kakao.maps.MapTypeId.ROADMAP // 지도종류
+                }; 
 
-		// 지도를 생성한다 
-		var map = new kakao.maps.Map(mapContainer, mapOption); 
+            // 지도를 생성한다 
+            var map = new kakao.maps.Map(mapContainer, mapOption); 
 
-		// 지도 타입 변경 컨트롤을 생성한다
-		var mapTypeControl = new kakao.maps.MapTypeControl();
+            // 지도 타입 변경 컨트롤을 생성한다
+            var mapTypeControl = new kakao.maps.MapTypeControl();
 
-		// 지도의 상단 우측에 지도 타입 변경 컨트롤을 추가한다
-		map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);	
+            // 지도의 상단 우측에 지도 타입 변경 컨트롤을 추가한다
+            map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);	
 
-		// 지도에 확대 축소 컨트롤을 생성한다
-		var zoomControl = new kakao.maps.ZoomControl();
+            // 지도에 확대 축소 컨트롤을 생성한다
+            var zoomControl = new kakao.maps.ZoomControl();
 
-		// 지도의 우측에 확대 축소 컨트롤을 추가한다
-		map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+            // 지도의 우측에 확대 축소 컨트롤을 추가한다
+            map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
-		// 지도에 마커를 생성하고 표시한다
-		var marker = new kakao.maps.Marker({
-		    position: new kakao.maps.LatLng(lat, lon), // 마커의 좌표
-		    map: map // 마커를 표시할 지도 객체
-		});
+            // 지도에 마커를 생성하고 표시한다
+            var marker = new kakao.maps.Marker({
+                position: new kakao.maps.LatLng(lat, lon), // 마커의 좌표
+                map: map // 마커를 표시할 지도 객체
+            });
 
-		// 커스텀 오버레이를 생성하고 지도에 표시한다
-		var customOverlay = new kakao.maps.CustomOverlay({
-			map: map,
-			content: '<div style="padding:10px 15px;background:#fff; border: 1px solid black;">Human center</div>', 
-			position: new kakao.maps.LatLng(lat, lon), // 커스텀 오버레이를 표시할 좌표
-			xAnchor: 0.5, // 컨텐츠의 x 위치
-			yAnchor: 0 // 컨텐츠의 y 위치
-		});
+            // 커스텀 오버레이를 생성하고 지도에 표시한다
+            var customOverlay = new kakao.maps.CustomOverlay({
+                map: map,
+                content: '<div style="padding:10px 15px;background:#fff; border: 1px solid black;">Human center</div>', 
+                position: new kakao.maps.LatLng(lat, lon), // 커스텀 오버레이를 표시할 좌표
+                xAnchor: 0.5, // 컨텐츠의 x 위치
+                yAnchor: 0 // 컨텐츠의 y 위치
+            });
 
 
-		// 지도에 클릭 이벤트를 등록합니다
-		/* 수정본 */
-		// 지도를 클릭하면 마지막 파라미터로 넘어온 함수를 호출합니다
-		kakao.maps.event.addListener(map, 'click', function(mouseEvent) {        
-			
-			// 클릭한 위도, 경도 정보를 가져옵니다 
-			var latlng = mouseEvent.latLng; 
-			
-			// 마커 위치를 클릭한 위치로 옮깁니다
-			marker.setPosition(latlng);
-			
-			var message = '클릭한 위치의 위도는 ' + latlng.getLat() + ' 이고, ';
-			message += '경도는 ' + latlng.getLng() + ' 입니다';
-			
-			var resultDiv = document.getElementById('clickLatlng'); 
-			resultDiv.innerHTML = message;
-			
-		});
+            // 지도에 클릭 이벤트를 등록합니다
+            /* 수정본 */
+            // 지도를 클릭하면 마지막 파라미터로 넘어온 함수를 호출합니다
+            kakao.maps.event.addListener(map, 'click', function(mouseEvent) {        
+                
+                // 클릭한 위도, 경도 정보를 가져옵니다 
+                var latlng = mouseEvent.latLng; 
+                
+                // 마커 위치를 클릭한 위치로 옮깁니다
+                marker.setPosition(latlng);
+                
+                var message = '클릭한 위치의 위도는 ' + latlng.getLat() + ' 이고, ';
+                message += '경도는 ' + latlng.getLng() + ' 입니다';
+                
+                var resultDiv = document.getElementById('clickLatlng'); 
+                resultDiv.innerHTML = message;                
+            });
+        
+        </script>
 
-	
-    </script>
+        <!-- signup 페이지 불러오기 -->
+        <!-- <script>
+            async function fetchHtmlAsText(url) {
+                return await (await fetch(url)).text();
+            }
 
+            async function importPage(target) {
+                document.querySelector('#' + target).innerHTML = await fetchHtmlAsText(target + '.html');
+            }
+            importPage('login');
+        </script> -->
+
+        <!-- 회원가입 html 불러오기. -->
+        <script>
+            /* dom */ /*이벤트제거*//*이벤트 바인딩*/
+            $("#btn2").off("click").on("click", function(){
+                // ajax 실행
+                let option = {
+                    //"url" : "http://localhost:8081/json",
+                    // "url" : "http://localhost:8081/test1",
+                    "url" : "http://127.0.0.1:5501/login.html",
+                    "type": "get",
+                    "success" : function(data){
+                        console.log(data);
+                        // let result = document.querySelector("#result");
+                        let result = document.querySelector("#login");
+                    result.innerHTML = data
+                    },
+                    "error" : function(data){
+                        console.log(data)
+                    },
+                    "complete" : function(data){
+                        console.log("THE END")
+                    }
+                }
+                $.ajax(option);
+                let option2 = {                
+                    "url" : "http://localhost:8081/test1",               
+                    "type": "get"
+                }
+                $.ajax(option2)
+                    .done(function(data){
+                        console.log(data);
+                        let result = document.querySelector("#login");
+                        result.innerHTML = data
+                    })
+                    .fail()
+                    .always(function(data){
+                        console.log("THE END")
+                    })
+            })
+            </script>
+
+            
+             <!-- #################### 링크 안 됨 확인필요!!!!!!!!!!!!!!
+            /* dom */ /*이벤트제거*//*이벤트 바인딩*/   -->
+            <script>
+            $("#btn1").off("click").on("click", function(){
+                // ajax 실행
+                let option = {
+                    //"url" : "http://localhost:8081/json",
+                    // "url" : "http://localhost:8081/test1",
+                    "url" : "http://127.0.0.1:5501/find.html",
+                    "type": "get",
+                    "success" : function(data){
+                        console.log(data);                  
+                        let result = document.querySelector("#login");
+                    result.innerHTML = data
+                    },
+                    "error" : function(data){
+                        console.log(data)
+                    },
+                    "complete" : function(data){
+                        console.log("THE END")
+                    }
+                }         
+                $.ajax(option);
+                let option2 = {                
+                    "url" : "http://localhost:8081/test1",               
+                    "type": "get"
+                }
+                  
+            })
+        </script>
+        
+        <!-- imgmake 창 불러오기 imgmake.html -->
+        <script>
+             /* dom */ /*이벤트제거*//*이벤트 바인딩*/
+             $("#btn3").off("click").on("click", function(){
+                // ajax 실행
+                let option = {
+                    //"url" : "http://localhost:8081/json",
+                    // "url" : "http://localhost:8081/test1",
+                    "url" : "http://127.0.0.1:5501/imgmake.html",
+                    "type": "get",
+                    "success" : function(data){
+                        console.log(data);
+                        // let result = document.querySelector("#result");
+                        let result = document.querySelector("#AIProject");
+                    result.innerHTML = data
+                    },
+                    "error" : function(data){
+                        console.log(data)
+                    },
+                    "complete" : function(data){
+                        console.log("THE END")
+                    }
+                }     
+                 $.ajax(option);
+                let option2 = {                
+                    "url" : "http://localhost:8081/test1",               
+                    "type": "get"
+                }
+             
+            })
+        </script>
+
+        <!-- chatbot 창 불러오기 chatbot.html -->
+        <script>
+            /* dom */ /*이벤트제거*//*이벤트 바인딩*/
+            $("#btn4").off("click").on("click", function(){
+                // ajax 실행
+                let option = {
+            
+                    "url" : "http://127.0.0.1:5501/chatbot.html",
+                    "type": "get",
+                    "success" : function(data){
+                        console.log(data);
+                        // let result = document.querySelector("#result");
+                        let result = document.querySelector("#chatbot");
+                    result.innerHTML = data
+                    },
+                    "error" : function(data){
+                        console.log(data)
+                    },
+                    "complete" : function(data){
+                        console.log("THE END")
+                    }
+                }     
+                $.ajax(option);
+                let option2 = {                
+                    "url" : "http://localhost:8081/test1",               
+                    "type": "get"
+                }
+            })
+        </script>
     </body>
 </html>
