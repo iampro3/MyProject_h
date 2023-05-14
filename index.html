@@ -76,7 +76,7 @@
             <a href="https://twitter.com/i/flow/login" class="fab fa-twitter"></a>
             <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
             <a href="#Map">M</a>            
-            <a href="#field">Post</a>            
+            <span id="btn5"><a href="#field" >Post</a></span>            
         </div>            
     </header>
 
@@ -310,14 +310,23 @@
 
          <!-- section 6 게시판 -->
         <section class="field", id="field">
-
-
+            <div class="login-container">
+                <!-- 입력 영역 -->
+                <div class="common-title">We make a new Generation, and new Universe</div>
+                <br>
+                <img src="img/last1.jpg" alt="" style="width:420px;height:550px;align-items: flex-end;" >
+                <img src="img/last2.jpg" alt="" style="width:520px;height:550px;align-items: flex-end;" >
+                <!-- <div class="margin-box">
+                    <div id="map" style="width:100%;height:500px;"></div> -->
+               
             <!--카피라이트-->
-            <div class="copy">                    
-                <br>          
-                <p>Copyright&copy: 2023 AI Project JOE. All rights reserved.</p>                        
+            <div class="copy">       
+                <br>             
+                                
+                <p align="center">Copyright&copy: 2023 AI Project JOE. All rights reserved.</p>   
+            </div>                     
             </div>
-            <br>  
+             
         </section>
 
         <!-- map api -->
@@ -387,31 +396,17 @@
         
         </script>
 
-        <!-- signup 페이지 불러오기 -->
-        <!-- <script>
-            async function fetchHtmlAsText(url) {
-                return await (await fetch(url)).text();
-            }
-
-            async function importPage(target) {
-                document.querySelector('#' + target).innerHTML = await fetchHtmlAsText(target + '.html');
-            }
-            importPage('login');
-        </script> -->
 
         <!-- 회원가입 html 불러오기. -->
         <script>
             /* dom */ /*이벤트제거*//*이벤트 바인딩*/
             $("#btn2").off("click").on("click", function(){
                 // ajax 실행
-                let option = {
-                    //"url" : "http://localhost:8081/json",
-                    // "url" : "http://localhost:8081/test1",
+                let option = {                 
                     "url" : "http://127.0.0.1:5501/login.html",
                     "type": "get",
                     "success" : function(data){
-                        console.log(data);
-                        // let result = document.querySelector("#result");
+                        console.log(data);                       
                         let result = document.querySelector("#login");
                     result.innerHTML = data
                     },
@@ -439,16 +434,14 @@
                     })
             })
             </script>
-
             
-             <!-- #################### 링크 안 됨 확인필요!!!!!!!!!!!!!!
+             <!-- 
             /* dom */ /*이벤트제거*//*이벤트 바인딩*/   -->
             <script>
             $("#btn1").off("click").on("click", function(){
                 // ajax 실행
                 let option = {
-                    //"url" : "http://localhost:8081/json",
-                    // "url" : "http://localhost:8081/test1",
+            
                     "url" : "http://127.0.0.1:5501/find.html",
                     "type": "get",
                     "success" : function(data){
@@ -478,13 +471,11 @@
              $("#btn3").off("click").on("click", function(){
                 // ajax 실행
                 let option = {
-                    //"url" : "http://localhost:8081/json",
-                    // "url" : "http://localhost:8081/test1",
+               
                     "url" : "http://127.0.0.1:5501/imgmake.html",
                     "type": "get",
                     "success" : function(data){
-                        console.log(data);
-                        // let result = document.querySelector("#result");
+                        console.log(data);                      
                         let result = document.querySelector("#AIProject");
                     result.innerHTML = data
                     },
@@ -514,9 +505,37 @@
                     "url" : "http://127.0.0.1:5501/chatbot.html",
                     "type": "get",
                     "success" : function(data){
-                        console.log(data);
-                        // let result = document.querySelector("#result");
+                        console.log(data);                        
                         let result = document.querySelector("#chatbot");
+                    result.innerHTML = data
+                    },
+                    "error" : function(data){
+                        console.log(data)
+                    },
+                    "complete" : function(data){
+                        console.log("THE END")
+                    }
+                }     
+                $.ajax(option);
+                let option2 = {                
+                    "url" : "http://localhost:8081/test1",               
+                    "type": "get"
+                }
+            })
+        </script>
+
+          <!-- field 창 불러오기 field.html -->
+          <script>
+            /* dom */ /*이벤트제거*//*이벤트 바인딩*/
+            $("#btn5").off("click").on("click", function(){
+                // ajax 실행
+                let option = {
+            
+                    "url" : "http://127.0.0.1:5501/field.html",
+                    "type": "get",
+                    "success" : function(data){
+                        console.log(data);                        
+                        let result = document.querySelector("#field");
                     result.innerHTML = data
                     },
                     "error" : function(data){
