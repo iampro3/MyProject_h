@@ -4,17 +4,138 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="./js/libstudy.js"></script>
+    <title>서울시 도서관 수강 정보</title>
+
+    <!-- <script src="./js/libstudy.js"></script>
+    <link rel="stylesheet" href="css/style.css">      -->
 </head>
 <body>
-    <!-- 1.버튼을 누르면 가져오기
-         * 2. 페이지가 열리자마자 가져오기
-    -->
+    <input type="button" id="btn1" value="강좌 조회하기" style="width: 123px;height: 30px;color: rgb(63, 6, 116);">        
+    <div id="info">
+    <style>
+        th,td{
+            border: 1px solid grey;
+            padding: 10px;
+            width: 100px;
+        }
+    </style>
+    <table>
+        <thead>
+            <tr>
+            <th>LECTURE ID</th>
+            <th>TITLE</th>
+            <th>SUBJECT</th>
+            <th>START DATE</th>
+            <th>END DATE</th>
+            <th>PLACE</th>
+            <!-- <th>CHARGE</th> -->
+            <!-- <th>METHOD</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="8">내용이 없습니다.</td>
+            </tr>
 
-    <!-- 실시간 목록 보여주기 top 5-->
-    <div id="list">
-        로딩 중입니다....
-    </div>
+        </tbody>
+    </table>
+</div>
+<script>
+ 
+    let btn1 = document.querySelector("#btn1");
+    btn1.addEventListener("click", function(){  //////////
+        // ajax 객체 생성
+        const xhr = new XMLHttpRequest();   // 준비시킴
+        
+        // 보낼 준비
+        // let url ="http://openapi.seoul.go.kr:8088/53526648466c75633733686b534766/json/DailyAverageCityAir/1/5/20130306/서북권/은평구";  주소지정이 잘못된 것?
+        //xhr.responseType = 'json'
+        xhr.open('GET', 'http://openapi.seoul.go.kr:8088/53526648466c75633733686b534766/json/DailyAverageCityAir/1/5/20130306/서북권/은평구'); // url로 부르면 안 들어온다.
+        // xhr.open('GET', 'http://openapi.seoul.go.kr:8088/42655972616c75633838727176754c/json/SeoulLibraryLectureInfo/4/8/'); // url로 부르면 안 들어온다.
+        // 실행을 지시. 단 언제 끝날지 모름
+        xhr.send();
+        // 다녀오는것이 끝났을 때, : 응답 이후
+        xhr.onload = function(){
+            console.log(xhr.responseText);
+   
+            try
+            {
+                let json_data = JSON.parse(xhr.responseText);
+                //console.log(json_data);   
+                let PM10 = json_data.DailyAverageCityAir.row[0].PM10
+                let PM25 = json_data.DailyAverageCityAir.row[0].PM25
+                let PM21 = json_data.DailyAverageCityAir.row[0].PM25
+                let PM22 = json_data.DailyAverageCityAir.row[0].PM25
+                let PM23 = json_data.DailyAverageCityAir.row[0].PM25
+                let PM24 = json_data.DailyAverageCityAir.row[0].PM25
+
+                let html = "";
+                html += '<tr>';
+                html += '   <td>id</td>';
+                html += '   <td>'+PM10+'</td>';
+                html += '   <td>'+PM10+'</td>';
+                html += '   <td>'+PM10+'</td>';
+                html += '   <td>'+PM10+'</td>';
+                html += '   <td>'+PM10+'</td>';
+                // html += '   <td>'+PM10+'</td>';
+                html += '</tr>';
+                html += '<tr>';
+                html += '   <td>id</td>';
+                html += '   <td>'+PM25+'</td>';
+                html += '   <td>'+PM25+'</td>';
+                html += '   <td>'+PM25+'</td>';
+                html += '   <td>'+PM25+'</td>';
+                html += '   <td>'+PM25+'</td>';
+                // html += '   <td>'+PM25+'</td>';
+                html += '</tr>';
+                html += '</tr>';
+                html += '<tr>';
+                html += '   <td>id</td>';
+                html += '   <td>'+PM10+'</td>';
+                html += '   <td>'+PM10+'</td>';
+                html += '   <td>'+PM10+'</td>';
+                html += '   <td>'+PM10+'</td>';
+                html += '   <td>'+PM10+'</td>';
+                // html += '   <td>'+PM10+'</td>';
+                html += '</tr>';
+                html += '<tr>';
+                html += '   <td>id</td>';
+                html += '   <td>'+PM25+'</td>';
+                html += '   <td>'+PM25+'</td>';
+                html += '   <td>'+PM25+'</td>';
+                html += '   <td>'+PM25+'</td>';
+                html += '   <td>'+PM25+'</td>';
+                // html += '   <td>'+PM25+'</td>';
+                html += '</tr>';
+                html += '</tr>';
+                html += '<tr>';
+                html += '   <td>id</td>';
+                html += '   <td>'+PM10+'</td>';
+                html += '   <td>'+PM10+'</td>';
+                html += '   <td>'+PM10+'</td>';
+                html += '   <td>'+PM10+'</td>';
+                html += '   <td>'+PM10+'</td>';
+                // html += '   <td>'+PM10+'</td>';
+                html += '</tr>';
+                html += '<tr>';
+                html += '   <td>id</td>';
+                html += '   <td>'+PM25+'</td>';
+                html += '   <td>'+PM25+'</td>';
+                html += '   <td>'+PM25+'</td>';
+                html += '   <td>'+PM25+'</td>';
+                html += '   <td>'+PM25+'</td>';
+                // html += '   <td>'+PM25+'</td>';
+                html += '</tr>';
+                html += '</tr>';     
+
+                document.querySelector("tbody").innerHTML =html;
+
+            } catch(error){
+                console.error(error)
+            }                
+        }
+    })
+
+</script>
 </body>
 </html>
