@@ -21,8 +21,7 @@
     
         <script src="js/script.js"></script>     
         
-        <!-- xhl js 파일 -->
-        <script src="./js/libstudy.js"></script>       
+           
     </head>
 
     <!-- login 버튼 누르면 이동 -->
@@ -420,7 +419,7 @@
                 }
                 $.ajax(option);
                 let option2 = {                
-                    "url" : "http://localhost:8081/test1",               
+                    "url" : "http://localhost:8081/",               
                     "type": "get"
                 }
                 $.ajax(option2)
@@ -459,7 +458,7 @@
                 }         
                 $.ajax(option);
                 let option2 = {                
-                    "url" : "http://localhost:8081/test1",               
+                    "url" : "http://localhost:8081/",               
                     "type": "get"
                 }
                   
@@ -489,7 +488,7 @@
                 }     
                  $.ajax(option);
                 let option2 = {                
-                    "url" : "http://localhost:8081/test1",               
+                    "url" : "http://localhost:8081/",               
                     "type": "get"
                 }
              
@@ -519,7 +518,7 @@
                 }     
                 $.ajax(option);
                 let option2 = {                
-                    "url" : "http://localhost:8081/test1",               
+                    "url" : "http://localhost:8081/",               
                     "type": "get"
                 }
             })
@@ -548,7 +547,7 @@
                 }     
                 $.ajax(option);
                 let option2 = {                
-                    "url" : "http://localhost:8081/test1",               
+                    "url" : "http://localhost:8081/",               
                     "type": "get"
                 }
             })
@@ -567,6 +566,7 @@
                         console.log(data);                        
                         let result = document.querySelector("#Find");
                     result.innerHTML = data
+                    viewData()
                     },
                     "error" : function(data){
                         console.log(data)
@@ -577,7 +577,7 @@
                 }     
                 $.ajax(option);
                 let option2 = {                
-                    "url" : "http://localhost:8081/test1",               
+                    "url" : "http://localhost:8081/",               
                     "type": "get"
                 }
             })
