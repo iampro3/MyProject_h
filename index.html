@@ -403,7 +403,7 @@
             $("#btn2").off("click").on("click", function(){
                 // ajax 실행
                 let option = {                 
-                    "url" : "http://127.0.0.1:5501/login.html",
+                    "url" : "http://127.0.0.1:5501/login.html", // sts에서 경로를 변경했다. 그리고 kakao map 생성을 위해서 
                     "type": "get",
                     "success" : function(data){
                         console.log(data);                       
