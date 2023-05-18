@@ -1,11 +1,11 @@
 $(function(){       // 조작하고 기능을 만드는 파일js
 
     // 슬릭 슬라이드 시작!
-    $('.slide-container').slick({
-        dots: false,
-        arrows: true,
+   $('.slide-container').slick({    // 얘는 살려야만 dots 가 안 보인다.
+        dots: false, // 지워도 안 보이는데 깜박일때, 점이 보이기 때문에 살려야 한다.
+//         arrows: false,
 
-
+/* 
         autoplay: true,                 // 자동재생 여부
         autoplaySpeed: 3000,            // 자동재생 슬라이드 시간
         infinite: true,                 // 무한 반복 
@@ -20,7 +20,7 @@ $(function(){       // 조작하고 기능을 만드는 파일js
 
         pauseOnDotsHover: true,         // 페이지네이션 호버 시 자동재생 멈춤
         pauseOnFocus: true,             // 포커스 시, 자동재생 멈춤
-        pauseOnHover: true,             // 호버 시, 자동재생 멈춤
+        pauseOnHover: true,             // 호버 시, 자동재생 멈춤 -- 여기 지움 */
 
 
         /* 효과 */
@@ -28,57 +28,57 @@ $(function(){       // 조작하고 기능을 만드는 파일js
         // cssEase: 'linear',
 
 
-        // 네비게이션 화살표 커스텀
-        prevArrow: '<button class="slide-arrow prev-arrow"></button>',
-        nextArrow: '<button class="slide-arrow next-arrow"></btton>',
+    //     // 네비게이션 화살표 커스텀
+    //     prevArrow: '<button class="slide-arrow prev-arrow"></button>',
+    //     nextArrow: '<button class="slide-arrow next-arrow"></btton>',
 
 
-        //******다른 슬라이드와 연결하는 옵션
-        asNavFor: '.slide-nav',
+    //     //******다른 슬라이드와 연결하는 옵션
+    //     asNavFor: '.slide-nav',
 
 
-        /* 반응형 */
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                }
-            },
-            {
-                breakpoint: 800,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                }
-            },
+    //     /* 반응형 */
+    //     responsive: [
+    //         {
+    //             breakpoint: 1024,
+    //             settings: {
+    //                 slidesToShow: 3,
+    //                 slidesToScroll: 1,
+    //             }
+    //         },
+    //         {
+    //             breakpoint: 800,
+    //             settings: {
+    //                 slidesToShow: 2,
+    //                 slidesToScroll: 2,
+    //             }
+    //         },
+    //         {
+    //             breakpoint: 480,
+    //             settings: {
+    //                 slidesToShow: 1,
+    //                 slidesToScroll: 1,
+    //             }
+    //         },
     
-        ]
+    //     ]
     })
 
-    //메인슬라이드와 연결
-    $('.slide-nav').slick ({
-        dots: false,
-        arrows: false,
-        slidesToShow: 5,
-        slidesToScroll: 1,
+    // //메인슬라이드와 연결    // 지워도 dot 안 보임 - 상관없었음
+    // $('.slide-nav').slick ({
+        //  dots: false,       // img 앞에 dots가 생기는데 false로 설정되어 있음
+        //  arrows: false,
+    //     slidesToShow: 5,
+    //     slidesToScroll: 1,
 
-        pauseOnDotsHover: true,         // 페이지네이션 호버 시 자동재생 멈춤
-        pauseOnFocus: true,             // 포커스 시, 자동재생 멈춤
-        pauseOnHover: true,             // 호버 시, 자동재생 멈춤
+    //     pauseOnDotsHover: true,         // 페이지네이션 호버 시 자동재생 멈춤
+    //     pauseOnFocus: true,             // 포커스 시, 자동재생 멈춤
+    //     pauseOnHover: true,             // 호버 시, 자동재생 멈춤
         
-        centerMode: true,
-        focusOnSelect: true,
-        asNavFor: '.slide-container',
-    }) // 슬라이드 네비게이션
+    //     centerMode: true,
+    //     focusOnSelect: true,
+    //     asNavFor: '.slide-container',
+    // }) // 슬라이드 네비게이션
 
     /* 메뉴닫기 */
     $('#btn-close').on('click', function() {
@@ -102,9 +102,3 @@ $(function(){       // 조작하고 기능을 만드는 파일js
         },400)
     })
 })
-    // 아코디언 menu - main left 
-    $(".que").click(function() {
-        $(this).next(".anw").stop().slideToggle(300);
-    $(this).toggleClass('on').siblings().removeClass('on');
-    $(this).next(".anw").siblings(".anw").slideUp(300); // 1개씩 펼치기
-    });
