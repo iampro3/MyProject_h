@@ -32,7 +32,7 @@ header {
     background-color: rgb(212, 185, 227);
     width: 25rem;       /* body에  padding-left: 25rem;  준 값*/
     display: flex;
-    flex-direction: column; /* 가로 방향으로 변경함 */
+    flex-direction: column; /* 세로 방향으로 변경함 display:flex와 세트로 가야 한다. */
     justify-content: space-between;
     align-items: center;
     padding: 10rem 1rem;
@@ -548,7 +548,12 @@ a {
     width: 100%;
     height: 700px;
     margin: 0 auto;
-    display: flex;
+    /* display : flex 는 이미지들 세로로 정렬 : 컨테이너안에 이미지가 들어있는데, 
+        그 이미지들이 들어있는 컨테이너들을 세로로 정렬함
+        https://wooncloud.com/10
+        display : inline-flex 는 이미지들 가로 정렬 */
+    display: flex;  
+    /* flex-direction : row; // 이미지들 가로 정렬하기 0519 추가*/
     /* justify-content: space-between;
     align-items: center; */   
     
@@ -578,6 +583,65 @@ a {
 }
 .slide li{ margin-right: 0; }
 
+/* 
+.slide li slide-dots {
+    
+} */
+
+/* slider dots 비활성화
+.test-css {
+  bottom: -25px;
+  width: 100%;
+  list-style: none;
+  text-align: end;
+  position: absolute;
+  right: 15px;
+  padding: 0;
+}
+
+.test-css li {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  // margin: 1px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.test-css li button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  cursor: pointer;
+  color: transparent;
+  border: 0;
+  outline: 0;
+  background: 0 0;
+}
+
+.test-css li button:before {
+  font-size: 2.7rem;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  content: '•';
+  text-align: center;
+  opacity: .75;
+  color: #6D6968;
+}
+
+.test-css li.slick-active button:before {
+  opacity: .75;
+  color: #ffffff;
+}*/
+
 .slide a{
   display: block; /* 영역적용위해 사용 */
   width: 100%; height: 100%;
@@ -602,7 +666,6 @@ a {
   line-height: 250px;  /*글자 수직 위치*/
 
   opacity: 0; /* 처음엔 안보이고 */
-
   transition: 0.3s;
 }
 
