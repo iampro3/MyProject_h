@@ -281,9 +281,11 @@
                             <div class="login-btnbox" id="btn2"><a href="#login" class="login-btn">회원가입</a></div>   
                                                       
                             <!-- ID/PW 찾기 -->
-                            <br>
-                                <div id="btn1" style="text-align: center;"><a href=#login class="login-btn">ID/PW 찾기</a>                                                
-                                </div>      
+                            <br>                            
+                                <div id="btn1" style="text-align: center;"><a href=#login class="login-btn">ID 찾기</a>                                                
+                                <div id="btn1" style="text-align: center;"><a href=#login class="login-btn">PW 찾기</a>                                                
+                                </div>  
+                             
                     </div>   
                 </form>    
             </div>                     
@@ -422,16 +424,16 @@
                     "url" : "http://localhost:8081/",               
                     "type": "get"
                 }
-                $.ajax(option2)
-                    .done(function(data){
-                        console.log(data);
-                        let result = document.querySelector("#login");
-                        result.innerHTML = data
-                    })
-                    .fail()
-                    .always(function(data){
-                        console.log("THE END")
-                    })
+                // $.ajax(option2)
+                //     .done(function(data){
+                //         console.log(data);
+                //         let result = document.querySelector("#login");
+                //         result.innerHTML = data
+                //     })
+                //     .fail()
+                //     .always(function(data){
+                //         console.log("THE END")
+                //     })
             })
             </script>
             
@@ -460,8 +462,7 @@
                 let option2 = {                
                     "url" : "http://localhost:8081/",               
                     "type": "get"
-                }
-                  
+                }                  
             })
         </script>
         

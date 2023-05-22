@@ -9,22 +9,39 @@
 
 </head>
 <body>
+    <div style="margin-left:70px;margin-top: 50px;"> 
     <input type="button" id="btn7" value="강좌 조회하기" style="width:105px; height:30px; color: rgb(63, 6, 116);">        
     <!-- <div class="title-btnbox" id="btn7"><a href="#Find" class="title-btn">강좌 조회하기</a></div>  -->
+    </div>
     
-    <div id="info">
     <style>
 
         th{background-color: rgb(187, 155, 233);color: aliceblue;}
         th,td{
             border: 1px solid grey;
-            padding: 10px 5px;
+            padding: 12px 10px;
             /* width: 100px; */
         }
+
+        #input .button{
+	    display: block;
+	    background-color: rgb(227, 220, 233);
+	    color: blanchedalmond;
+	    font-size: 1.0rem;
+	    color: rgb(133, 103, 146);
+	    margin-top: 10px;   /* 내가 추가함 */
+	    
+	    line-height: 25px;    /* 버튼 안에서 글자 높이 */
+	    border-radius: 15px;
+	    width: 170px;
+	    height: 30px;
+	    justify-content: space-between;
+	    align-items: center;    
+	}
     </style>
-    <table>
+    <table style="padding:10px 70px">
         <thead>
-            <tr>
+          <tr>
             <th>LECTURE ID</th>
             <th>TITLE</th>
             <th>SUBJECT</th>
@@ -33,145 +50,59 @@
             <th>PLACE</th>
             <!-- <th>CHARGE</th> -->
             <!-- <th>METHOD</th> -->
-            </tr>
+          </tr>
         </thead>
         <tbody>
-            <tr>
-                <td colspan="8">내용이 없습니다.</td>
-            </tr>
-
+          <tr>
+            <td colspan="8">내용이 없습니다.</td>
+          </tr>
         </tbody>
-    </table>
-</div>
-<script>
+      </table>    
+      
+      <script>  
+      
+        let btn7 = document.querySelector("#btn7");
+        btn7.addEventListener("click", function() {
+      
+          const xhr = new XMLHttpRequest();
+          xhr.open("GET", "http://openapi.seoul.go.kr:8088/42655972616c75633838727176754c/json/SeoulLibraryLectureInfo/1/8/");
+      
+          xhr.send();
+      
+          xhr.onload = function() {
+            console.log(xhr.responseText);
+      
+            try {
+              let json_data = JSON.parse(xhr.responseText);
+      
 
- function viewData(){
+              for (let i = 0; i < 6; i++) {
+				          let LECTURE_ID = json_data.SeoulLibraryLectureInfo.row[i].LECTURE_ID;
+				          let TITLE = json_data.SeoulLibraryLectureInfo.row[i].TITLE;
+				          let SUBJECT = json_data.SeoulLibraryLectureInfo.row[i].SUBJECT;
+				          let TERM_START_DATE = json_data.SeoulLibraryLectureInfo.row[i].TERM_START_DATE;
+				          let TERM_END_DATE = json_data.SeoulLibraryLectureInfo.row[i].TERM_END_DATE;
+				          let PLACE = json_data.SeoulLibraryLectureInfo.row[i].PLACE;
+				
+				          let html = "";
+				          html += "<tr>";
+				          html += "<td>" + LECTURE_ID + "</td>";
+				          // html += "<td>ID</td>";
+				          html += "<td>" + TITLE + "</td>";
+				          html += "<td>" + SUBJECT + "</td>";
+				          html += "<td>" + TERM_START_DATE + "</td>";
+				          html += "<td>" + TERM_END_DATE + "</td>";
+				          html += "<td>" + PLACE + "</td>";
+				          html += "</tr>";
 
-     let btn7 = document.querySelector("#btn7");
-     btn7.addEventListener("click", function(){  //////////
-         // ajax 객체 생성
-         const xhr = new XMLHttpRequest();   // 준비시킴
-         
-         // 보낼 준비
-         // let url ="http://openapi.seoul.go.kr:8088/53526648466c75633733686b534766/json/DailyAverageCityAir/1/5/20130306/서북권/은평구";  주소지정이 잘못된 것?
-         //xhr.responseType = 'json'
-         // xhr.open('GET', 'http://openapi.seoul.go.kr:8088/53526648466c75633733686b534766/json/DailyAverageCityAir/1/5/20130306/서북권/은평구'); // url로 부르면 안 들어온다.
-         xhr.open('GET', 'http://openapi.seoul.go.kr:8088/42655972616c75633838727176754c/json/SeoulLibraryLectureInfo/4/8/'); // url로 부르면 안 들어온다.
-         // 실행을 지시. 단 언제 끝날지 모름
-         xhr.send();
-         // 다녀오는것이 끝났을 때, : 응답 이후
-         xhr.onload = function(){
-             console.log(xhr.responseText);
-    
-             try
-             {
-                 let json_data = JSON.parse(xhr.responseText);
-                 //console.log(json_data);   
-                 // let PM10 = json_data.DailyAverageCityAir.row[0].PM10
-                 let LECTURE_ID = json_data.SeoulLibraryLectureInfo.row[0].LECTURE_ID
-                 let TITLE = json_data.SeoulLibraryLectureInfo.row[0].TITLE
-                 let SUBJECT = json_data.SeoulLibraryLectureInfo.row[0].SUBJECT
-                 let TERM_START_DATE = json_data.SeoulLibraryLectureInfo.row[0].TERM_START_DATE
-                 let TERM_END_DATE = json_data.SeoulLibraryLectureInfo.row[0].TERM_END_DATE
-                 let PLACE = json_data.SeoulLibraryLectureInfo.row[0].PLACE
- 
-                 // for(let i=0;i<list_post.length;i++){     
-                     
-                 // }
-                //  lectures = []
-                //     for row in json_data.SeoulLibraryLectureInfo:
-                //     lectures.append({
-                //         "id": row[0],
-                //         "title": row[1],
-                //         "subject": row[2],
-                //         "term_start_date": row[3],
-                //         "term_end_date": row[4],
-                //         "place": row[5]
-                //     })
-
-                //  for row in json_data.SeoulLibraryLectureInfo:
-                //     print(row[6])
- 
-                 let html = "";
-                 html += '<tr>';
-                 html += '   <td>'+LECTURE_ID+'</td>';
-                 // html += '   <td>ID</td>';
-                 html += '   <td>'+TITLE+'</td>';
-                 html += '   <td>'+SUBJECT+'</td>';
-                 html += '   <td>'+TERM_START_DATE+'</td>';
-                 html += '   <td>'+TERM_END_DATE+'</td>';
-                 html += '   <td>'+PLACE+'</td>';
-                 
-                 html += '</tr>';
-                 html += '<tr>';
-                 html += '   <td>'+LECTURE_ID+'</td>';
-                 html += '   <td>'+TITLE+'</td>';
-                 html += '   <td>'+SUBJECT+'</td>';
-                 html += '   <td>'+TERM_START_DATE+'</td>';
-                 html += '   <td>'+TERM_END_DATE+'</td>';
-                 html += '   <td>'+PLACE+'</td>';
-                 
-                 html += '</tr>';
-                 html += '</tr>';
-                 html += '<tr>';
-                 html += '   <td>'+LECTURE_ID+'</td>';
-                 html += '   <td>'+TITLE+'</td>';
-                 html += '   <td>'+SUBJECT+'</td>';
-                 html += '   <td>'+TERM_START_DATE+'</td>';
-                 html += '   <td>'+TERM_END_DATE+'</td>';
-                 html += '   <td>'+PLACE+'</td>';
-                 
-                 html += '</tr>';
-                 html += '<tr>';
-                 html += '   <td>'+LECTURE_ID+'</td>';
-                 html += '   <td>'+TITLE+'</td>';
-                 html += '   <td>'+SUBJECT+'</td>';
-                 html += '   <td>'+TERM_START_DATE+'</td>';
-                 html += '   <td>'+TERM_END_DATE+'</td>';
-                 html += '   <td>'+PLACE+'</td>';   
-                
-                 html += '</tr>';
-                 html += '</tr>';
-                 html += '<tr>';
-                 html += '   <td>'+LECTURE_ID+'</td>';
-                 html += '   <td>'+TITLE+'</td>';
-                 html += '   <td>'+SUBJECT+'</td>';
-                 html += '   <td>'+TERM_START_DATE+'</td>';
-                 html += '   <td>'+TERM_END_DATE+'</td>';
-                 html += '   <td>'+PLACE+'</td>';
-                 
-                 html += '</tr>';
-                 html += '<tr>';
-                 html += '   <td>'+LECTURE_ID+'</td>';
-                 html += '   <td>'+TITLE+'</td>';
-                 html += '   <td>'+SUBJECT+'</td>';
-                 html += '   <td>'+TERM_START_DATE+'</td>';
-                 html += '   <td>'+TERM_END_DATE+'</td>';
-                 html += '   <td>'+PLACE+'</td>';
-                 
-                 html += '</tr>';
-                 html += '</tr>';     
-                 // html += '</tr>';
-                 html += '<tr>';
-                 html += '   <td>'+LECTURE_ID+'</td>';
-                 html += '   <td>'+TITLE+'</td>';
-                 html += '   <td>'+SUBJECT+'</td>';
-                 html += '   <td>'+TERM_START_DATE+'</td>';
-                 html += '   <td>'+TERM_END_DATE+'</td>';
-                 html += '   <td>'+PLACE+'</td>';
-                 
-                 html += '</tr>';
-                 html += '</tr>';   
-                     
-                 document.querySelector("tbody").innerHTML =html;
- 
-             } catch(error){
-                 console.error(error)
-             }                
-         }
-     })
- }
- viewData();
+          document.querySelector("tbody").innerHTML += html;
+        }
+      } catch(error) {
+        console.error(error);
+      }
+    };
+  });  
+     
 </script>
 </body>
 </html>

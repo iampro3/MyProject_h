@@ -23,13 +23,30 @@
   }
   </script>
 
+  
+  <script>
+  function func(year) {
+    document.sign.selectYear.value  = year;
+    // 파라미터로 전달받은 셀렉트박스 속성값을 
+    // 텍스트 박스 속성값에 전달함
+  }
+
+  function func1(month) {
+    document.sign.selectMonth.value  = month;
+  }
+
+  function func2(day) {
+    document.sign.selectDay.value  = day;
+  }
+  </script>
 <body>
+  
     <section class="sign" id="sign">   
             
             <!-- <div class="common-title">Login</div> -->
             <div class="sign-container">
                 <!-- 입력 영역 -->
-                <form action="" method="post">
+                <form action="" name="sign" method="post">
                     <!-- 로그인 박스 -->
                     <div class="sign-wrap">
                         <div class="sign-text">Sign up</div><br>
@@ -76,7 +93,7 @@
                                   <!-- 생년월일 -->
                               <div class="sign-inputbox">
                                 <!-- <input type="year" name="year" placeholder="생년 / 월 / 일"> -->
-                                <select name="year">
+                                <select name="year" onchange="func(this.value)">
                                   <option value="">출생년도</option>
                                   <option value="1970">1970</option>
                                   <option value="1980">1980</option>
@@ -86,8 +103,9 @@
                                   <option value="1984">1984</option>
                                   <option value="2023">2023</option>
                               </select>
+                              <input type="text" name="selectYear" style="width: 60px;">
 
-                              <select name="month">
+                              <select name="month" onchange="func1(this.value)">
                                 <option value="">월</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -102,8 +120,9 @@
                                 <option value="11">11</option>
                                 <option value="12">12</option>
                             </select>
+                            <input type="text" name="selectMonth" style="width: 30px;">
 
-                            <select name="day">
+                            <select name="day" onchange="func2(this.value)">
                               <option value="">일</option>
                               <option value="1">1</option>
                               <option value="2">2</option>
@@ -113,6 +132,7 @@
                               <option value="6">6</option>
                               <option value="31">31</option>
                           </select>
+                          <input type="text" name="selectDay" style="width: 30px;">
                                 <span class="border"></span>
                                 </div>
                             <!-- <input type="button" value="Login" onclick="fnClick()" width="100" height="200"><br> -->
@@ -122,8 +142,13 @@
                             <div class="sign-btnbox"><a href="#" class="sign-btn" onclick="fnClick()" >등록</a></div>
                         </div> 
                       </div>  
+                      
+                      
+                      
                 </form>    
              </div> 
         </section>
     </body>
+
+    
 </html>

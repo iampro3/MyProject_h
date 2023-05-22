@@ -37,31 +37,31 @@ $(function(){       // 조작하고 기능을 만드는 파일js
     //     asNavFor: '.slide-nav',
 
 
-    //     /* 반응형 */
-    //     responsive: [
-    //         {
-    //             breakpoint: 1024,
-    //             settings: {
-    //                 slidesToShow: 3,
-    //                 slidesToScroll: 1,
-    //             }
-    //         },
-    //         {
-    //             breakpoint: 800,
-    //             settings: {
-    //                 slidesToShow: 2,
-    //                 slidesToScroll: 2,
-    //             }
-    //         },
-    //         {
-    //             breakpoint: 480,
-    //             settings: {
-    //                 slidesToShow: 1,
-    //                 slidesToScroll: 1,
-    //             }
-    //         },
+        /* 반응형 */
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 800,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            },
     
-    //     ]
+        ]
     })
 
     // //메인슬라이드와 연결    // 지워도 dot 안 보임 - 상관없었음
